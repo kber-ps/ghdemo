@@ -23,7 +23,7 @@ void display_time()
 /*
  * Print the time diff from current time
  */
-void display_time_diff(time_t old_time)
+void display_time_diff_from_now(time_t old_time)
 {
     char buf[BUF_SIZE];
     time_t the_time = old_time - time(NULL);
