@@ -59,6 +59,19 @@ void display_time_diff2(time_t time1, time_t time2)
     print_string(buf);
 }
 
+/*
+ * Print the time difference
+ */
+void display_time_diff3(time_t time1, time_t time2)
+{
+    char buf[BUF_SIZE];
+    time_t the_time = time2 - time1;
+    char t = ctime(&the_time);
+    
+    sprintf(buf, "\n\nTime difference is %s\n\n", t);
+    print_string(buf);
+}
+
 
 /* 
  * Dummy Function -- time always taken from system
