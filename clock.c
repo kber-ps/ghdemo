@@ -20,6 +20,19 @@ void display_time()
     print_string(buf);
 }
 
+/*
+ * Print the current time
+ */
+void display_time_diff(time_t old_time)
+{
+    char buf[BUF_SIZE];
+    time_t the_time = old_time - time(NULL);
+    char t = ctime(&the_time);
+    
+    sprintf(buf, "\n\nCurrent Time and Date is %s\n\n", t);
+    print_string(buf);
+}
+
 
 /* 
  * Dummy Function -- time always taken from system
