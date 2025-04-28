@@ -32,8 +32,8 @@ jobs:
 
     # Setup reviedog
     - name: ReviewDog setup
-        uses: reviewdog/action-setup@v1
-        if: true
+      uses: reviewdog/action-setup@v1
+      if: true
 
     # Checks out your repository under $GITHUB_WORKSPACE, so that your job can access it.
     - name: Checkout code
@@ -66,8 +66,6 @@ jobs:
       uses: github/codeql-action/upload-sarif@v3
       with:
         sarif_file: reports/report.sarif
-    
-    
 
     # Uploads analysis results in the SARIF format, so that they are displayed as GitHub code scanning alerts.
     - name: Upload results (SARIF)
