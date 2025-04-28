@@ -32,7 +32,7 @@ jobs:
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git diff -U0 HEAD^ | clang-format-diff-18 -p1 | /tmp/reviewdog -f=diff -f.diff.strip=0 -name=clang-format -reporter=github-check
+          git diff -U0 HEAD^ | clang-format-diff-18 -p1 | reviewdog -f=diff -f.diff.strip=0 -name=clang-format -reporter=github-check
 
   # reviewdog: use clang-format for PR review
   clang-format-pr:
@@ -54,5 +54,5 @@ jobs:
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git diff -U0 HEAD^ | clang-format-diff-18 -p1 | /tmp/reviewdog -f=diff -f.diff.strip=0 -name=clang-format-pr -reporter=github-pr-review -fail-on-error
+          git diff -U0 HEAD^ | clang-format-diff-18 -p1 | reviewdog -f=diff -f.diff.strip=0 -name=clang-format-pr -reporter=github-pr-review -fail-on-error
 
